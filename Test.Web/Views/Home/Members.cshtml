@@ -1,0 +1,40 @@
+﻿@model IEnumerable<SparshWeb.Models.DisplayGroupMember>
+
+@{
+    ViewBag.Title = "Members";
+    Layout = "~/Views/Shared/_Layout.cshtml";
+}
+<br/><br/>
+<h3>Govrning Board Members</h3>
+
+<p style="font-style:italic;font-size:smaller;">
+    Elected For The Year 2018-19 In The Annual General Meeting Held
+    on 29th March 2018 At 8 PM at The 8th Floor Sky Garden of Building J21-22 
+</p>
+
+@foreach (var item in Model)
+{
+    if (item.MemberList.Count > 0)
+    {
+    <div class="table">
+        <div class="row header blue" style="font-size:small;">
+            <div class="cell">@Html.DisplayFor(modelItem => item.GroupName)</div>
+            <div class="cell"></div>
+            <div class="cell"></div>
+            <div class="cell"></div>
+            <div class="cell"></div>
+        </div>        
+            @foreach (var mem in item.MemberList)
+            {
+                <div class="row" style="font-size:small;">
+                    <div class="cell"></div>
+                    <div class="cell">@Html.DisplayFor(modelItem => mem.DisplayName)</div>
+                    <div class="cell">@Html.DisplayFor(modelItem => mem.MemberFlat)</div>
+                    <div class="cell"><img src="~/Images/dial.png" style="width:20px; height:20px;" />@Html.DisplayFor(modelItem => mem.Contact)</div>
+                    <div class="cell"><img src="~/Images/whatsup.png" style="width:20px; height:20px;" />@Html.DisplayFor(modelItem => mem.WhatsUp)</div>
+                </div>
+            }
+   </div>
+
+    }
+}

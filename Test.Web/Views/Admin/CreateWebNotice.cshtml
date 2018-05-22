@@ -1,0 +1,87 @@
+﻿@model SparshWeb.Models.WebNoticeViewModel
+
+@{
+    ViewBag.Title = "CreateWebNotice";
+    Layout = "~/Views/Shared/_LayoutAdmin.cshtml";
+}
+
+<h2>CreateWebNotice</h2>
+
+@using (Html.BeginForm())
+{
+    @Html.AntiForgeryToken()
+
+<div class="form-horizontal">
+    <h4>WebNoticeViewModel</h4>
+    <hr />
+    @Html.ValidationSummary(true, "", new { @class = "text-danger" })
+    <div class="form-group">
+        @Html.LabelFor(model => model.NoticeId, htmlAttributes: new { @class = "control-label col-md-2" })
+        <div class="col-md-10">
+            @Html.EditorFor(model => model.NoticeId, new { htmlAttributes = new { @class = "form-control" } })
+            @Html.ValidationMessageFor(model => model.NoticeId, "", new { @class = "text-danger" })
+        </div>
+    </div>
+
+    <div class="form-group">
+        @Html.LabelFor(model => model.NoticeDesc, htmlAttributes: new { @class = "control-label col-md-2" })
+        <div class="col-md-10">
+            @Html.TextAreaFor(model => model.NoticeDesc, new { htmlAttributes = new { @class = "form-control", style = " rows=10, columns=400" } })
+            @Html.ValidationMessageFor(model => model.NoticeDesc, "", new { @class = "text-danger" })
+        </div>
+    </div>
+
+    <div class="form-group">
+        @Html.LabelFor(model => model.PublishedDate, htmlAttributes: new { @class = "control-label col-md-2" })
+        <div class="col-md-10">
+            @*@Html.EditorFor(model => model.PublishedDate, new { htmlAttributes = new { @class = "form-control" } })*@
+            <p><input class="form-control" type="text" id="datepicker"></p>
+            @Html.ValidationMessageFor(model => model.PublishedDate, "", new { @class = "text-danger" })
+        </div>
+    </div>
+    @*<div class="demo">
+            <p>Date: <input type="text" id="datepicker"></p>
+        </div>*@
+
+    
+
+    <div class="form-group">
+        <div class="col-md-offset-2 col-md-10">
+            <input type="submit" value="Create" class="btn btn-default" />
+        </div>
+    </div>
+</div>
+}
+
+<div>
+    @Html.ActionLink("Back to List", "Index")
+</div>
+
+<script>
+ 
+    $(function () {
+        $('#datepicker').datepicker({
+            dateFormat: 'dd-mm-yy',
+            onSelect: function (datetext) {
+                var d = new Date(); // for now
+
+                var h = d.getHours();
+                h = (h < 10) ? ("0" + h) : h;
+
+                var m = d.getMinutes();
+                m = (m < 10) ? ("0" + m) : m;
+
+                var s = d.getSeconds();
+                s = (s < 10) ? ("0" + s) : s;
+
+                datetext = datetext + " " + h + ":" + m + ":" + s;
+
+                $('#datepicker').val(datetext);
+            }
+        });
+    });
+</script>
+
+<link href="http://code.jquery.com/ui/1.10.4/themes/smoothness/jquery-ui.min.css" rel="stylesheet" type="text/css" />
+<script src="http://code.jquery.com/jquery-1.11.0.min.js"></script>
+<script src="http://code.jquery.com/ui/1.10.4/jquery-ui.min.js"></script>

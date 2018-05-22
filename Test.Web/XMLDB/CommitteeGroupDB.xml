@@ -1,0 +1,57 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<CommitteeGroups>
+  <Group>
+    <GroupId>101</GroupId>
+    <GroupName>PRESIDENT</GroupName>
+    <GroupOrder>1</GroupOrder>
+    <IsActive>True</IsActive>
+  </Group>
+  <Group>
+    <GroupId>102</GroupId>
+    <GroupName>VICE PRESIDENT</GroupName>
+    <GroupOrder>2</GroupOrder>
+    <IsActive>True</IsActive>
+  </Group>
+  <Group>
+    <GroupId>103</GroupId>
+    <GroupName>GN. SECRETARY</GroupName>
+    <GroupOrder>3</GroupOrder>
+    <IsActive>True</IsActive>
+  </Group>
+  <Group>
+    <GroupId>104</GroupId>
+    <GroupName>Jt. SECRETARY</GroupName>
+    <GroupOrder>4</GroupOrder>
+    <IsActive>True</IsActive>
+  </Group>
+  <Group>
+    <GroupId>105</GroupId>
+    <GroupName>TREASURER</GroupName>
+    <GroupOrder>5</GroupOrder>
+    <IsActive>True</IsActive>
+  </Group>
+  <Group>
+    <GroupId>106</GroupId>
+    <GroupName>JT. TREASURER</GroupName>
+    <GroupOrder>6</GroupOrder>
+    <IsActive>True</IsActive>
+  </Group>
+  <Group>
+    <GroupId>107</GroupId>
+    <GroupName>ADVISORY COMMITTEE</GroupName>
+    <GroupOrder>7</GroupOrder>
+    <IsActive>True</IsActive>
+  </Group>
+  <Group>
+    <GroupId>108</GroupId>
+    <GroupName>Office SECRETARY</GroupName>
+    <GroupOrder>8</GroupOrder>
+    <IsActive>True</IsActive>
+  </Group>
+  <Group>
+    <GroupId>109</GroupId>
+    <GroupName>Executive MEMBERS</GroupName>
+    <GroupOrder>9</GroupOrder>
+    <IsActive>True</IsActive>
+  </Group>
+</CommitteeGroups>

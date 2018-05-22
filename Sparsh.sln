@@ -1,0 +1,31 @@
+﻿
+Microsoft Visual Studio Solution File, Format Version 12.00
+# Visual Studio 15
+VisualStudioVersion = 15.0.27130.2036
+MinimumVisualStudioVersion = 10.0.40219.1
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "SparshWeb", "Test.Web\SparshWeb.csproj", "{38DB836B-1588-4C09-9F41-6DDD9C3CF0EF}"
+EndProject
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "UnitTestProject", "UnitTestProject\UnitTestProject.csproj", "{AF00EE69-484C-4D76-81BF-3AC48E7AF615}"
+EndProject
+Global
+	GlobalSection(SolutionConfigurationPlatforms) = preSolution
+		Debug|Any CPU = Debug|Any CPU
+		Release|Any CPU = Release|Any CPU
+	EndGlobalSection
+	GlobalSection(ProjectConfigurationPlatforms) = postSolution
+		{38DB836B-1588-4C09-9F41-6DDD9C3CF0EF}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{38DB836B-1588-4C09-9F41-6DDD9C3CF0EF}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{38DB836B-1588-4C09-9F41-6DDD9C3CF0EF}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{38DB836B-1588-4C09-9F41-6DDD9C3CF0EF}.Release|Any CPU.Build.0 = Release|Any CPU
+		{AF00EE69-484C-4D76-81BF-3AC48E7AF615}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{AF00EE69-484C-4D76-81BF-3AC48E7AF615}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{AF00EE69-484C-4D76-81BF-3AC48E7AF615}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{AF00EE69-484C-4D76-81BF-3AC48E7AF615}.Release|Any CPU.Build.0 = Release|Any CPU
+	EndGlobalSection
+	GlobalSection(SolutionProperties) = preSolution
+		HideSolutionNode = FALSE
+	EndGlobalSection
+	GlobalSection(ExtensibilityGlobals) = postSolution
+		SolutionGuid = {F26197C3-27E2-453F-82A0-56D72769F113}
+	EndGlobalSection
+EndGlobal

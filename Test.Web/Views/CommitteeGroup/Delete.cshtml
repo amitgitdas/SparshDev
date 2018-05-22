@@ -1,0 +1,59 @@
+﻿@model SparshWeb.Models.CommitteeGroupViewModel
+
+@{
+    ViewBag.Title = "Delete";
+    Layout = "~/Views/Shared/_LayoutAdmin.cshtml";
+}
+
+
+<div>
+    <h4 style="color:red;">Are you Sure to Delete this Committee Group?</h4>
+    <hr />
+    <h6 style="color:red; font-style:italic; ">@ViewBag.ErrorMessage</h6>
+    <dl class="dl-horizontal">
+     
+        @Html.HiddenFor(model => model.GroupId)
+        @*<dt>
+            @Html.DisplayNameFor(model => model.GroupId)
+        </dt>
+
+        <dd>
+            @Html.DisplayFor(model => model.GroupId)
+        </dd>*@
+
+        <dt>
+            @*@Html.DisplayNameFor(model => model.GroupName)*@
+            Committee Group Name
+        </dt>
+
+        <dd>
+            @Html.DisplayFor(model => model.GroupName)
+        </dd>
+
+        <dt>
+            @Html.DisplayNameFor(model => model.GroupOrder)
+        </dt>
+
+        <dd>
+            @Html.DisplayFor(model => model.GroupOrder)
+        </dd>
+
+        <dt>
+            @Html.DisplayNameFor(model => model.IsActive)
+        </dt>
+
+        <dd>
+            @Html.DisplayFor(model => model.IsActive)
+        </dd>
+
+    </dl>
+
+    @using (Html.BeginForm()) {
+        @Html.AntiForgeryToken()
+
+        <div class="form-actions no-color">
+            <input type="submit" value="Delete" class="btn btn-default" /> |
+            @Html.ActionLink("Back to List", "Index")
+        </div>
+    }
+</div>

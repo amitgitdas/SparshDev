@@ -1,0 +1,43 @@
+﻿
+@model PagedList.IPagedList<SparshWeb.Models.CommitteeGroupViewModel>
+@using PagedList.Mvc;
+
+@{
+    ViewBag.Title = "Committee Groups";
+    Layout = "~/Views/Shared/_LayoutAdmin.cshtml";
+}
+
+      <h4>List Committee Groups</h4>
+
+<p>
+    @Html.ActionLink("Create New", "Create")
+</p>
+<div class="table">
+
+    <div class="row header blue" style="font-size:small;">
+        <div class="cell">Action</div>
+        <div class="cell">ID</div>
+        <div class="cell">Group Name</div>
+        <div class="cell">Group Order</div>
+        <div class="cell">Active?</div>
+    </div>
+    @foreach (var item in Model)
+    {
+        <div class="row" style="font-size:small;">
+            <div class="cell">
+                @Html.ActionLink("Edit", "Edit", new { id = item.GroupId }) |
+                @Html.ActionLink("Details", "Details", new { id = item.GroupId }) |
+                @Html.ActionLink("Delete", "Delete", new { id = item.GroupId })
+            </div>
+            <div class="cell">@Html.DisplayFor(modelItem => item.GroupId)</div>
+            <div class="cell">@Html.DisplayFor(modelItem => item.GroupName)</div>
+            <div class="cell">@Html.DisplayFor(modelItem => item.GroupOrder)</div>
+            <div class="cell">@Html.DisplayFor(modelItem => item.IsActive)</div>
+        </div>
+    }
+
+</div>
+Page @(Model.PageCount < Model.PageNumber ? 0 : Model.PageNumber) of @Model.PageCount
+
+@Html.PagedListPager(Model, page => Url.Action("Index",
+    new { page }))

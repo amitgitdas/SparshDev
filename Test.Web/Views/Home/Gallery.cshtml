@@ -1,0 +1,25 @@
+﻿@model IEnumerable<SparshWeb.Models.GalleryImageViewModel>
+
+@{
+    ViewBag.Title = "Gallery";
+    Layout = "~/Views/Shared/_Layout.cshtml";
+}
+
+<h2>Photo Gallery</h2>
+<div>
+    @if (Model.ToList().Count > 0)
+    {
+        foreach (var image in Model.ToList())
+        {
+            <div style=" margin:10px; float:left; height:200px; overflow:hidden; width:200px;">
+                <a id="ShowImage" class="fancybox-button" data-rel="fancybox-button" title="Photo"
+                   href="#" onclick="popup('@Url.Content("~/GalleryImg/" + image.ImageName)');">
+                    <div class="zoom">
+                        <img src="@Url.Content("~/GalleryImg/" + image.ImageName)" style="max-width:100%;" />
+                        <div class="zoom-icon"></div>
+                    </div>
+                </a>
+            </div>
+        }
+    }
+</div>

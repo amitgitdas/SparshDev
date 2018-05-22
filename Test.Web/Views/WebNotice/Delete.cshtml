@@ -1,0 +1,56 @@
+﻿@model SparshWeb.Models.WebNoticeViewModel
+
+@{
+    ViewBag.Title = "Delete";
+    Layout = "~/Views/Shared/_LayoutAdmin.cshtml";
+}
+
+@*<h2>Delete</h2>*@
+
+<h3 style="color:orangered;">Are you sure you want to delete this Notice?</h3>
+<div>
+    <h4></h4>
+    <hr />
+ 
+
+    <div class="form-horizontal">
+        <div class="form-group">
+            @Html.Label("WebNotice Details", htmlAttributes: new { @class = "control-label col-md-2" })
+            <div class="col-md-10">
+                @Html.DisplayFor(model => model.NoticeDesc, new { htmlAttributes = new { @class = "form-control" } })
+            </div>
+        </div>
+        <div class="form-group">
+            @Html.Label("Published On", htmlAttributes: new { @class = "control -label col-md-2" })
+            <div class="col-md-10">
+                @Html.DisplayFor(model => model.PublishedDate, new { htmlAttributes = new { @class = "form-control" } })
+            </div>
+        </div>        
+
+        <div class="form-group">
+            @Html.Label("Is Active?", htmlAttributes: new { @class = "control-label col-md-2" })
+            <div class="col-md-10">
+                <div class="checkbox">
+                    @Html.EditorFor(model => model.IsActive)
+                </div>
+            </div>
+        </div>
+
+        <div class="form-group">
+            @Html.Label("Last Updated On", htmlAttributes: new { @class = "control-label col-md-2" })
+            <div class="col-md-10">
+                @Html.DisplayFor(model => model.UpdatedDate, new { htmlAttributes = new { @class = "form-control" } })
+            </div>
+        </div>
+    </div>
+
+    @using (Html.BeginForm())
+    {
+        @Html.AntiForgeryToken()
+
+        <div class="form-actions no-color">
+            <input type="submit" value="Delete" class="btn btn-default" /> |
+            @Html.ActionLink("Back to List", "Index")
+        </div>
+    }
+</div>

@@ -1,0 +1,47 @@
+﻿
+@model PagedList.IPagedList<SparshWeb.Models.WebNoticeViewModel>
+@using PagedList.Mvc;
+
+@{
+    ViewBag.Title = "WebNotice";
+    Layout = "~/Views/Shared/_LayoutAdmin.cshtml";
+}
+
+<h2>WebNotice</h2>
+
+<p>
+    @Html.ActionLink("Create New", "Create")
+</p>
+
+
+<div class="table">
+
+    <div class="row header blue" style="font-size:small;">
+        <div class="cell">Action</div>
+        <div class="cell">ID</div>
+        <div class="cell">Desc</div>
+        <div class="cell">Pub Date</div>
+        <div class="cell">Active?</div>
+        <div class="cell">Updated On</div>
+    </div>
+    @foreach (var item in Model)
+    {
+    <div class="row" style="font-size:small;">
+        <div class="cell">
+            @Html.ActionLink("Edit", "Edit", new { id = item.NoticeId }) |
+            @Html.ActionLink("Details", "Details", new { id = item.NoticeId }) |
+            @Html.ActionLink("Delete", "Delete", new { id = item.NoticeId })
+        </div>
+        <div class="cell">@Html.DisplayFor(modelItem => item.NoticeId)</div>
+        <div class="cell">@Html.DisplayFor(modelItem => item.NoticeDesc)</div>
+        <div class="cell">@Html.DisplayFor(modelItem => item.PublishedDate)</div>
+        <div class="cell">@Html.DisplayFor(modelItem => item.IsActive)</div>
+        <div class="cell">@Html.DisplayFor(modelItem => item.UpdatedDate)</div>
+    </div>
+    }
+
+</div>
+Page @(Model.PageCount < Model.PageNumber ? 0 : Model.PageNumber) of @Model.PageCount
+
+@Html.PagedListPager(Model, page => Url.Action("Index",
+    new { page }))
